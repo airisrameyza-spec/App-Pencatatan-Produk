@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane stylesheets="@styles/app.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kelas.controller.FormController">
+    <top>
+        <HBox spacing="16" styleClass="header">
+            <Label prefHeight="30.0" prefWidth="286.0" styleClass="title" text="Tambah Produk" />
+            <Button onAction="#kembaliKeDaftar" text="Kembali" />
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true">
+            <content>
+                <VBox spacing="16" styleClass="page">
+                    <VBox spacing="12" styleClass="card">
+                        <Label styleClass="subtitle" text="Input Data Produk" />
+                        <Label text="Kode Produk" />
+                        <TextField fx:id="txtKode" />
+                        <Label text="Nama Produk" />
+                  <TextField fx:id="txtNama" />
+                        <Label text="Kategori" />
+                  <ComboBox fx:id="cbKategori" prefHeight="43.0" prefWidth="338.0" />
+                        <Label text="Harga Produk" />
+                  <TextField fx:id="txtHarga" />
+                  <Button fx:id="btnFoto" mnemonicParsing="false" onAction="#pilihFoto" prefHeight="37.0" prefWidth="149.0" text="Pilih Foto" />
+                  <Label fx:id="lblPathFoto" prefHeight="42.0" prefWidth="294.0" text="Belum ada foto dipilih" />
+                        <ImageView fx:id="gambarView" fitHeight="160" fitWidth="280" preserveRatio="true" />
+                        <Button maxWidth="Infinity" onAction="#simpanData" styleClass="button-primary" text="Simpan" />
+                        <Label fx:id="pesanLabel" styleClass="error" wrapText="true" />
+                    </VBox>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>
